@@ -36,3 +36,4 @@ export class Order extends BaseEntity {
   @OneToMany(() => CartItem, (cartItem) => cartItem.order, { cascade: true })
   items!: CartItem[];
 }
+

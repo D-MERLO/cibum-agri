@@ -3,6 +3,7 @@ import { IsEmail } from 'class-validator';
 import bcrypt from 'bcrypt';
 import { CartItem } from './CartItem';
 import { Order } from './Order';
+import { Cart } from './Cart';
 
 @Entity()
 export class User {
@@ -42,6 +43,9 @@ export class User {
 
   @OneToMany(() => CartItem, (cartItem) => cartItem.user)
   cartItems!: CartItem[];
+
+  @OneToMany(() => Cart, cart => cart.user) 
+  carts!: Cart[];
 
   // Método para encriptar la contraseña
   async hashPassword() {

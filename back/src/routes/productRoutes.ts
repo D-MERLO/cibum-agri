@@ -1,25 +1,17 @@
 import { Router } from 'express';
-import { createProduct, getProducts, updateProduct, deleteProduct, getProductById, getProductsByCategory } from '../controllers/productController';
-import { authMiddleware, adminMiddleware } from '../middlewares/auth';
-import { addProductToCart } from '../controllers/cartController'; // Supongamos que este controlador gestiona el carrito
-import { verifyToken } from '../middlewares/authMiddleware';
+import { createProduct, getProducts, getProductsByCategory, updateProduct, deleteProduct, getProduct } from '../controllers/productController';
+import { addProductToCart } from '../controllers/cartController';
+import { isAdmin } from '../middlewares/isAdmin';
+import { isAuthenticated } from '../middlewares/auth';
 
 const router = Router();
 
-router.post('/', authMiddleware, adminMiddleware, createProduct);
-router.post('/add-to-cart', verifyToken, addProductToCart); // Solo usuarios logueados pueden agregar al carrito
+router.post('/', isAuthenticated, isAdmin, createProduct);
+router.post('/add-to-cart', isAuthenticated, addProductToCart);
 router.get('/', getProducts);
-router.get('/:id', getProductById); 
+router.get('/:id', getProduct);
 router.get('/category/:category', getProductsByCategory);
-router.put('/:id', authMiddleware, adminMiddleware, updateProduct);
-router.delete('/:id', authMiddleware, adminMiddleware, deleteProduct);
+router.put('/:id', isAuthenticated, isAdmin, updateProduct);
+router.delete('/:id', isAuthenticated, isAdmin, deleteProduct);
 
 export default router;
-
-
-
-
-
-
-
-

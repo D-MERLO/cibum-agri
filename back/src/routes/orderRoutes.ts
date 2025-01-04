@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import { createOrder, getAllOrders, getOrdersByUserId } from '../controllers/orderController';
-import { verifyToken, isAdmin } from '../middlewares/auth';
+import { isAuthenticated } from '../middlewares/auth';
+import { isAdmin } from '../middlewares/isAdmin';
 
 const router = Router();
 
-router.post('/', verifyToken, createOrder); // Protegida, solo usuarios logueados pueden crear una orden
-router.get('/', verifyToken, isAdmin, getAllOrders); // Solo administrador puede ver todas las órdenes
-router.get('/user/:userId', verifyToken, getOrdersByUserId); // Protegida, usuarios logueados ven su historial
+router.post('/', isAuthenticated, createOrder); // Protegida, solo usuarios logueados pueden crear una orden
+router.get('/', isAuthenticated, isAdmin, getAllOrders); // Solo administrador puede ver todas las órdenes
+router.get('/user/:userId', isAuthenticated, getOrdersByUserId); // Protegida, usuarios logueados ven su historial
 
 export default router;

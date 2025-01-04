@@ -1,17 +1,19 @@
-import Order from '../entities/Order';
+import { AppDataSource } from '../config/database';
+import { Order } from '../entities/Order';
 
-export const orderService = {
-    createOrder: async (orderData: Partial<Order>) => {
-        const order = Order.create(orderData);
-        await order.save();
-        return order;
-    },
+export class OrderService {
+    private orderRepository = AppDataSource.getRepository(Order);
 
-    getOrdersByUserId: async (userId: number) => {
-        return Order.find({ where: { userId } });
-    },
+    async createOrder(orderData: Partial<Order>): Promise<Order> {
+        const order = this.orderRepository.create(orderData);
+        return await this.orderRepository.save(order);
+    }
 
-    getAllOrders: async () => {
-        return Order.find({ relations: ['product'] }); // Incluye el producto en cada orden
-    },
-};
+    async getOrdersByUserId(userId: number): Promise<Order[]> {
+        return await this.orderRepository.find({ where: { user: { id: userId } }, relations: ['user', 'items'] });  // Utiliza la relación user y carga las relaciones necesarias
+    }
+
+    async getAllOrders(): Promise<Order[]> {
+        return await this.orderRepository.find({ relations: ['user', 'items'] });  // Carga las relaciones necesarias
+    }
+}

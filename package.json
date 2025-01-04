@@ -1,0 +1,18 @@
+{
+    "name": "cibum-agri",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "back",
+        "front"
+    ],
+    "scripts": {
+        "install:all": "npm install",
+        "start:back": "npm run dev --workspace=back",
+        "start:front": "npm run dev --workspace=front",
+        "start": "concurrently \"npm run start:back\" \"npm run start:front\""
+    },
+    "dependencies": {
+        "concurrently": "^9.1.2"
+    }
+}
