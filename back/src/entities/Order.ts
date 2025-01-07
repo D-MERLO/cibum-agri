@@ -7,10 +7,7 @@ import { User } from './User';
 export class Order extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
-
-  @ManyToOne(() => User, (user) => user.orders)
-  user!: User;  // Relación con User para obtener el usuario que hizo el pedido
-
+ 
   @Column()
   quantity!: number;
 
@@ -30,6 +27,9 @@ export class Order extends BaseEntity {
   @UpdateDateColumn()
   updatedAt!: Date;
  
+  @ManyToOne(() => User, (user) => user.orders)
+  user!: User;  // Relación con User para obtener el usuario que hizo el pedido
+
   @ManyToOne(() => Product, (product) => product.orders)
   product!: Product;
 

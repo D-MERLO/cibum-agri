@@ -22,10 +22,6 @@ __decorate([
     __metadata("design:type", Number)
 ], Order.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => User_1.User, (user) => user.orders),
-    __metadata("design:type", User_1.User)
-], Order.prototype, "user", void 0);
-__decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
 ], Order.prototype, "quantity", void 0);
@@ -49,6 +45,10 @@ __decorate([
     (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
 ], Order.prototype, "updatedAt", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => User_1.User, (user) => user.orders),
+    __metadata("design:type", User_1.User)
+], Order.prototype, "user", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => Product_1.Product, (product) => product.orders),
     __metadata("design:type", Product_1.Product)
