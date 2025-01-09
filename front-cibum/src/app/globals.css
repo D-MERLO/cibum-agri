@@ -17,5 +17,16 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Mirza', sans-serif;
 }
+
+.mirza-regular {
+  font-family: 'Mirza', sans-serif;
+  font-weight: 400;
+}
+
+.mirza-bold {
+  font-family: 'Mirza', sans-serif;
+  font-weight: 700;
+}
+
