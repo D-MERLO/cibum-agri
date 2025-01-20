@@ -5,12 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --contrast-color: #E38D14;
+  --hover-contrast-color: #D38313;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --contrast-color: #E38D14;
+    --hover-contrast-color: #D38313;
   }
 }
 
@@ -30,3 +34,58 @@ body {
   font-weight: 700;
 }
 
+.button-contrast {
+  background-color: var(--contrast-color);
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  width: 100%;
+  font-size: large;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.button-contrast:hover {
+  background-color: var(--hover-contrast-color);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.input-container input {
+  flex: 1;
+  width: 75%;
+  padding-right: 1rem;
+
+}
+
+.input-container button {
+  cursor: pointer;
+}
+
+.input-container img {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin: 0px 15px;
+}
+
+.swal-button,
+.swal-button:focus,
+.swal-button:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  --tw-ring-color: transparent;
+}
+  .swal-button {
+    outline: none;
+    background-color: rgb(184, 184, 184);
+    color: #ffffff;
+
+  }

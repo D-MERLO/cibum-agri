@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 
+import RegisterPage from "./register/page";
+
 export const metadata: Metadata = {
   title: "CIBUM-AGRI"
 };
@@ -21,6 +23,7 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
+        <RegisterPage/>
         {children}
         <Footer />
       </body>
