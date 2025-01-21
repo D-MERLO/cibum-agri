@@ -140,11 +140,11 @@ const RegisterForm: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
-            <h2 className='.mirza-bold text-5xl'>¡Bienvenido!</h2>
+            <h2 className="mirza-bold text-5xl">¡Bienvenido!</h2>
             <form onSubmit={handleSubmit} className="p-6 rounded-lg w-full max-w-md">
                 {formInputs.map(({ name, type, placeholder, required, toggleShow, show, isPasswordAgain }) => (
-                    <div>
-                        <div key={name} className="my-3 input-container">
+                    <div key={name}>
+                        <div className="my-3 input-container">
                             <input
                                 type={type}
                                 id={name}
@@ -157,7 +157,7 @@ const RegisterForm: React.FC = () => {
                                 className="black p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                             />
                             {toggleShow && (
-                                <button type="button" onClick={toggleShow} className="">
+                                <button type="button" onClick={toggleShow} className="register-button">
                                     {show ? (
                                         <img src="/icons/open.svg" alt="Mostrar contraseña" />
                                     ) : (
@@ -169,13 +169,13 @@ const RegisterForm: React.FC = () => {
                         {errors[name] && <span className="text-sm text-red-500">{errors[name]}</span>}
                     </div>
                 ))}
-                <button type="submit" className="button-contrast">
+                <button type="submit" className="button-contrast register-button">
                     Registrarse
                 </button>
                 <p className="mt-8 text-center">
                     ¿Ya tienes cuenta?
                     <br />
-                    <a className="font-bold text-xl hover:underline" style={{ color: 'var(--contrast-color)' }} href="/login" >Iniciar sesión</a>
+                    <a className="font-bold text-xl hover:underline" style={{ color: 'var(--contrast-color)' }} href="/login">Iniciar sesión</a>
                 </p>
             </form>
             <footer className="mt-6 text-center text-sm text-gray-500">
@@ -183,7 +183,7 @@ const RegisterForm: React.FC = () => {
             </footer>
         </div>
     );
-
 };
 
 export default RegisterForm;
+

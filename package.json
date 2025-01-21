@@ -13,6 +13,7 @@
         "start": "concurrently \"npm run start:back\" \"npm run start:front\""
     },
     "dependencies": {
-        "concurrently": "^9.1.2"
+        "concurrently": "^9.1.2",
+        "react-google-login": "^5.2.2"
     }
 }
