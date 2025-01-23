@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 
 import RegisterPage from "./register/page";
+import LoginPage from "./login/page";
+import Contact from "./contact/page";
 
 export const metadata: Metadata = {
   title: "CIBUM-AGRI"
@@ -24,6 +26,8 @@ export default function RootLayout({
       <body>
         <Navbar />
         <RegisterPage/>
+        {/* <LoginPage /> */}
+        <Contact/>
         {children}
         <Footer />
       </body>

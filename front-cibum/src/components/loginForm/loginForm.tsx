@@ -75,7 +75,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="mirza-bold text-5xl">Iniciar Sesión</h2>
+      <h2 className="mirza-bold text-5xl">¡Hola de nuevo!</h2>
       <form onSubmit={handleSubmit} className="p-6 rounded-lg w-full max-w-md">
         <div className="my-3 input-container">
           <input

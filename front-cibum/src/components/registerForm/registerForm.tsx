@@ -154,7 +154,7 @@ const RegisterForm: React.FC = () => {
                                 onChange={isPasswordAgain ? (e) => setPasswordAgain(e.target.value) : handleInputChange}
                                 onBlur={isPasswordAgain ? undefined : handleBlur}
                                 required={required}
-                                className="black p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                className="black p-2 rounded w-full"
                             />
                             {toggleShow && (
                                 <button type="button" onClick={toggleShow} className="register-button">

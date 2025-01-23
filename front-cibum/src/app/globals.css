@@ -17,13 +17,23 @@
     --hover-contrast-color: #D38313;
   }
 }
-
+html{
+  height: 100%;
+}
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Mirza', sans-serif;
 }
-
+h1{
+  font-size: xx-large;
+}
+h2{
+  font-size: x-large;
+}
+p{
+  font-size: large;
+}
 .mirza-regular {
   font-family: 'Mirza', sans-serif;
   font-weight: 400;
@@ -37,13 +47,14 @@ body {
 .button-contrast {
   background-color: var(--contrast-color);
   color: var(--foreground);
-  padding: 0.5rem 1rem;
+  padding: 3px 0px;
   border-radius: 2rem;
   width: 100%;
   font-size: large;
   font-weight: 700;
   text-align: center;
   transition: background-color 0.3s;
+  margin-top: 1rem;
 }
 
 .button-contrast:hover {
@@ -63,6 +74,11 @@ body {
   width: 75%;
   padding-right: 1rem;
 
+}
+
+.input-container input :focus {
+  outline: none;
+  border-color:#E38D14;
 }
 
 .input-container button {
