@@ -25,7 +25,7 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <RegisterPage/>
+        {/* <RegisterPage/> */}
         {/* <LoginPage /> */}
         <Contact/>
         {children}

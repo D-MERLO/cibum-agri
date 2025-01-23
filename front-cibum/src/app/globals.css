@@ -5,8 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --contrast-color: #E38D14;
-  --hover-contrast-color: #D38313;
+  --contrastColor: #E38D14;
+  --hoverContrast: #D38313;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,16 +14,23 @@
     --background: #0a0a0a;
     --foreground: #ededed;
     --contrast-color: #E38D14;
-    --hover-contrast-color: #D38313;
+    --hover-contrast: #D38313;
   }
 }
 html{
+  display: flex;
   height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--foreground);
   background: var(--background);
   font-family: 'Mirza', sans-serif;
+  width: 90%;
 }
 h1{
   font-size: xx-large;
@@ -45,7 +52,7 @@ p{
 }
 
 .button-contrast {
-  background-color: var(--contrast-color);
+  background-color: var(--contrastColor);
   color: var(--foreground);
   padding: 3px 0px;
   border-radius: 2rem;
@@ -58,7 +65,7 @@ p{
 }
 
 .button-contrast:hover {
-  background-color: var(--hover-contrast-color);
+  background-color: var(--hoverContrast);
 }
 
 .input-container {

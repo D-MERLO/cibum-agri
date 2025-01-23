@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        contrastColor: "var(--contrastColor)",
+        contrastHover: "var(--hoverContrast)",
       },
       animation: {
         grow: "grow 2s infinite", // Define la animación "grow"
@@ -22,6 +24,11 @@ export default {
         },
       },
     },
+  },
+  variants:{
+      extend: {
+        textColor: ['hover'],
+      }
   },
   plugins: [],
 } satisfies Config;
